@@ -3,7 +3,7 @@
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; flex-direction: row; align-items: center; text-align: center; margin-left: 150px">
     <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=radical" alt="Mis estadísticas de GitHub" width="420" height="200">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=benser22&theme=radical" alt="GitHub Streak" width="400" height="200">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=benser22&theme=radical" alt="GitHub Streak" width="420" height="200">
   </div>
 </div>
 

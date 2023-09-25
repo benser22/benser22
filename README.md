@@ -1,4 +1,5 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
+![Profile Views](https://shields.io/badge/dynamic/json?color=blue&label=Profile%20Views&query=%24.value&url=https%3A%2F%2Fapi.countapi.xyz%2Fget%2Fbenser22%2Fprofile-views)
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="flex: 1; max-width: 400px;">

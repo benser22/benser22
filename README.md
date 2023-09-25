@@ -67,7 +67,7 @@
     <a href="https://www.linkedin.com/in/bsf22/" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" width="40" height="40" alt="LinkedIn">
     </a>
-    <a href="mailto:benser22l@gmail.com" target="_blank">
+    <a href="mailto:benser22@gmail.com" target="_blank">
       <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" width="40" height="40" alt="Email">
     </a>
     <a href="https://wa.me/+5493815988025" target="_blank">

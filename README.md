@@ -7,9 +7,9 @@
     <div style="flex: 1; max-width: 400px;">
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=radical" alt="Top Languages" width="100%" height="200">
     </div>
-<!--     <div style="flex: 1; max-width: 400px;">
+    <div style="flex: 1; max-width: 400px;">
         <img src="https://github-readme-streak-stats.herokuapp.com/?user=benser22&theme=radical" alt="GitHub Streak" width="100%" height="200">
-    </div> -->
+    </div>
 </div>
 
 <hr>

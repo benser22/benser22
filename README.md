@@ -63,15 +63,15 @@
   <!-- Iconos para contacto -->
 <div align="center">
   <!-- Iconos para contacto -->
-  <div style="display: flex; justify-content: space-around;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
     <a href="https://www.linkedin.com/in/bsf22/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/640px-LinkedIn_logo_initials.png" width="40" height="40" alt="LinkedIn">
+      <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497466/icons/yqlmrg6djdsadiogusje.png" width="40px" height="40px" alt="LinkedIn">
     </a>
     <a href="mailto:benser22@gmail.com" target="_blank">
-      <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" width="40" height="40" alt="Email">
+      <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497465/icons/gzy2gk3cklfr0ysobc7l.png" width="40px" height="40px" alt="Email">
     </a>
     <a href="https://wa.me/+5493815988025" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Whatsapp_logo_svg.png/600px-Whatsapp_logo_svg.png" width="40" height="40" alt="WhatsApp">
+      <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497466/icons/vknu3drylpd66rcrzjs5.png" width="40px" height="40px" alt="Email">
     </a>
   </div>
 </div>

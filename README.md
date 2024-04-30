@@ -40,16 +40,16 @@
   <a href="https://material-ui.com/ target="_blank"">
     <img src="https://img.shields.io/badge/-Material_UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white&labelColor=0081CB&border=555555&borderRadius=5px" alt="Material UI" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://legacy.reactjs.org/docs/getting-started.html target="_blank"">
+  <a href="https://legacy.reactjs.org/docs/getting-started.html" target="_blank">
     <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black&labelColor=61DAFB&border=555555&borderRadius=5px" alt="React" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://www.typescriptlang.org/docs/ target="_blank"">
+  <a href="https://www.typescriptlang.org/docs" target="_blank">
     <img src="https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&labelColor=007ACC&border=555555&borderRadius=5px" alt="TypeScript" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://nextjs.org/docs/ target="_blank"">
+  <a href="https://nextjs.org/docs" target="_blank">
     <img src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white&labelColor=000000&border=555555&borderRadius=5px" alt="Next.js" style="border-radius:8px">
   </a>
-  <a href="https://docs.mongodb.com/ target="_blank"">
+  <a href="https://docs.mongodb.com" target="_blank">
     <img src="https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white&labelColor=47A248&border=555555&borderRadius=5px" alt="MongoDB" style="margin-right: 10px;border-radius:8px">
   </a>
 </p>

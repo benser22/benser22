@@ -16,40 +16,40 @@
 <h2 align="center">Skills</h2>
 
 <p align="center">
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
     <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&labelColor=F7DF1E&border=555555&borderRadius=5px" alt="JavaScript" style="margin-right: 10px; border-radius:8px">
   </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
     <img src="https://img.shields.io/badge/-HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=E34F26&border=555555&borderRadius=5px" alt="HTML" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
     <img src="https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=1572B6&border=555555&borderRadius=5px" alt="CSS" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://expressjs.com/">
+  <a href="https://expressjs.com/" target="_blank">
     <img src="https://img.shields.io/badge/-Express-000000?style=for-the-badge&logo=express&logoColor=white&labelColor=000000&border=555555&borderRadius=5px" alt="Express.js" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://www.postgresql.org/docs/">
+  <a href="https://www.postgresql.org/docs/" target="_blank">
     <img src="https://img.shields.io/badge/-PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white&labelColor=336791&border=555555&borderRadius=5px" alt="PostgreSQL" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://redux.js.org/">
+  <a href="https://redux.js.org/" target="_blank">
     <img src="https://img.shields.io/badge/-Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white&labelColor=764ABC&border=555555&borderRadius=5px" alt="Redux" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://tailwindcss.com/docs">
+  <a href="https://tailwindcss.com/docs" target="_blank">
     <img src="https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white&labelColor=38B2AC&border=555555&borderRadius=5px" alt="Tailwind CSS" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://material-ui.com/">
+  <a href="https://material-ui.com/ target="_blank"">
     <img src="https://img.shields.io/badge/-Material_UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white&labelColor=0081CB&border=555555&borderRadius=5px" alt="Material UI" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://legacy.reactjs.org/docs/getting-started.html">
+  <a href="https://legacy.reactjs.org/docs/getting-started.html target="_blank"">
     <img src="https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=black&labelColor=61DAFB&border=555555&borderRadius=5px" alt="React" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://www.typescriptlang.org/docs/">
+  <a href="https://www.typescriptlang.org/docs/ target="_blank"">
     <img src="https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white&labelColor=007ACC&border=555555&borderRadius=5px" alt="TypeScript" style="margin-right: 10px;border-radius:8px">
   </a>
-  <a href="https://nextjs.org/docs/">
+  <a href="https://nextjs.org/docs/ target="_blank"">
     <img src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white&labelColor=000000&border=555555&borderRadius=5px" alt="Next.js" style="border-radius:8px">
   </a>
-  <a href="https://docs.mongodb.com/">
+  <a href="https://docs.mongodb.com/ target="_blank"">
     <img src="https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white&labelColor=47A248&border=555555&borderRadius=5px" alt="MongoDB" style="margin-right: 10px;border-radius:8px">
   </a>
 </p>

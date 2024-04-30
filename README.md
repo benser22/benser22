@@ -1,13 +1,13 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
-<div style="display: flex; justify-content: center; align-items: center;">
-    <div style="flex: 1; max-width: 400px;">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;" class="fadeIn">
+    <div style="flex: 1; max-width: 400px; margin: 10px;">
         <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=radical" alt="Mis estadísticas de GitHub" width="100%" height="200">
     </div>
-    <div style="flex: 1; max-width: 400px;">
+    <div style="flex: 1; max-width: 400px; margin: 10px;">
         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=radical" alt="Top Languages" width="100%" height="200">
     </div>
-    <div style="flex: 1; max-width: 400px;">
+    <div style="flex: 1; max-width: 400px; margin: 10px;">
         <img src="https://github-readme-streak-stats.herokuapp.com/?user=benser22&theme=radical" alt="GitHub Streak" width="100%" height="200">
     </div>
 </div>
@@ -49,6 +49,9 @@
   <a href="https://nextjs.org/docs/">
     <img src="https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white&labelColor=000000&border=555555&borderRadius=5px" alt="Next.js" style="border-radius:8px">
   </a>
+  <a href="https://docs.mongodb.com/">
+    <img src="https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white&labelColor=47A248&border=555555&borderRadius=5px" alt="MongoDB" style="margin-right: 10px;border-radius:8px">
+  </a>
 </p>
 
 
@@ -60,18 +63,18 @@
 <h2 align="center">Contact</h2>
 
 
-  <!-- Iconos para contacto -->
+<!-- Iconos para contacto -->
 <div align="center">
   <!-- Iconos para contacto -->
   <div style="display: flex; justify-content: space-between; align-items: center;">
-    <a href="https://www.linkedin.com/in/bsf22/" target="_blank">
+    <a href="https://www.linkedin.com/in/bsf22/" target="_blank" style="margin-right: 10px;">
       <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497466/icons/yqlmrg6djdsadiogusje.png" width="40px" height="40px" alt="LinkedIn">
     </a>
-    <a href="mailto:benser22@gmail.com" target="_blank">
+    <a href="mailto:benser22@gmail.com" target="_blank" style="margin-right: 10px;">
       <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497465/icons/gzy2gk3cklfr0ysobc7l.png" width="40px" height="40px" alt="Email">
     </a>
     <a href="https://wa.me/+5493815988025" target="_blank">
-      <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497466/icons/vknu3drylpd66rcrzjs5.png" width="40px" height="40px" alt="Email">
+      <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497466/icons/vknu3drylpd66rcrzjs5.png" width="40px" height="40px" alt="WhatsApp">
     </a>
   </div>
 </div>

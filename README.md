@@ -1,17 +1,5 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
-<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;" class="fadeIn">
-    <div style="flex: 1; max-width: 400px; margin: 10px;">
-        <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=cobalt" alt="Mis estadísticas de GitHub" width="100%" height="200">
-    </div>
-    <div style="flex: 1; max-width: 400px; margin: 10px;">
-        <img src="https://github-readme-streak-stats.herokuapp.com/?user=benser22&theme=cobalt" alt="GitHub Streak" width="100%" height="200">
-    </div>
-    <div style="flex: 1; max-width: 400px; margin: 10px;">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=cobalt" alt="Top Languages" width="100%" height="200">
-    </div>
-</div>
-
 <hr>
 <h2 align="center">Skills</h2>
 

@@ -1,13 +1,14 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es&layout=compact" alt="GitHub Streak" height="200"/>
+  <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es" alt="GitHub Streak" height="200"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=cobalt&locale=es" alt="Top Languages" height="200"/>
 </p>
 
 <hr>
 
 <h2 align="center">⚡ Skills & Technologies</h2>
+
 <p align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
@@ -26,7 +27,7 @@
 </p>
 
 <p align="center">
-  <img src="https://i.pinimg.com/originals/7d/06/89/7d068990a6d0fa0b99d8ca96afde86dc.gif" width="260" alt="My GitHub Stats"/>
+  <img src="https://i.pinimg.com/originals/7d/06/89/7d068990a6d0fa0b99d8ca96afde86dc.gif" width="260" alt="Animated Code GIF"/>
 </p>
 
 <hr>
@@ -46,5 +47,5 @@
 </p>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=benser22&&style=flat-square" />
+  <img src="https://komarev.com/ghpvc/?username=benser22&&style=flat-square" alt="Profile views"/>
 </div>  

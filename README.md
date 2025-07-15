@@ -1,8 +1,8 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=benser22&theme=cobalt" alt="GitHub Streak" height="200"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=cobalt" alt="Top Languages" height="200"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=benser22" alt="GitHub Streak" height="200"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact" alt="Top Languages" height="200"/>
 </p>
 
 <hr>

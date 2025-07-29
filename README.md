@@ -1,8 +1,17 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
+<h2 align="center">📊 GitHub Stats</h2>
+
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es" alt="GitHub Streak" height="200"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=cobalt&locale=es" alt="Top Languages" height="200"/>
+  <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es" alt="GitHub Streak" height="180"/>
+
+
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=tokyonight&locale=es" alt="Top Languages" height="180"/>
+
+  <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=tokyonight&locale=es" alt="GitHub Stats" height="180"/>
+
+
+
 </p>
 
 <hr>

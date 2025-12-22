@@ -1,16 +1,22 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
+<p align="center">
+  💻 Frontend & Fullstack Developer | 🚀 Passionate about building modern web apps
+</p>
+
+---
+
 <h2 align="center">📊 GitHub Stats</h2>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es" alt="GitHub Streak" height="180"/>
-<!--   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=cobalt&locale=es" alt="Top Languages" height="180"/> -->
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=cobalt&locale=es" alt="Top Languages" height="180"/>
 </p>
 <p align="center">
-<!--   <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=tokyonight&locale=es" alt="GitHub Stats" height="180"/> -->
+  <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=tokyonight&locale=es" alt="GitHub Stats" height="180"/>
 </p>
 
-<hr>
+---
 
 <h2 align="center">⚡ Skills & Technologies</h2>
 
@@ -20,8 +26,6 @@
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-  <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express-000?style=for-the-badge&logo=express&logoColor=white"/>
   <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
@@ -35,7 +39,16 @@
   <img src="https://i.pinimg.com/originals/7d/06/89/7d068990a6d0fa0b99d8ca96afde86dc.gif" width="260" alt="Animated Code GIF"/>
 </p>
 
-<hr>
+---
+
+<h2 align="center">🌐 Portfolio</h2>
+
+<p align="center">
+  🚀 Check out my projects and work at:  
+  <a href="https://portfolio.22studios.xyz" target="_blank"><b>portfolio.22studios.xyz</b></a>
+</p>
+
+---
 
 <h2 align="center">📫 Contact</h2>
 

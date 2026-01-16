@@ -1,7 +1,7 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
 <p align="center">
-  💻 Frontend & Fullstack Developer | 🚀 Passionate about building modern web apps
+  💻 Fullstack Developer | 🚀 Passionate about building modern web apps
 </p>
 
 ---

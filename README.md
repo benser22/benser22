@@ -10,10 +10,10 @@
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es" alt="GitHub Streak" height="180"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&layout=compact&theme=cobalt&locale=es" alt="Top Languages" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&theme=cobalt" height="180"/>
 </p>
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=tokyonight&locale=es" alt="GitHub Stats" height="180"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=cobalt&locale=es" alt="GitHub Stats" height="180"/>
 </p>
 
 ---

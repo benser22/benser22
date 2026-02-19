@@ -1,0 +1,39 @@
+<svg width="495" height="195" xmlns="http://www.w3.org/2000/svg">
+  <rect width="495" height="195" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="25" y="40" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="15" font-weight="700" fill="#cdd9e5">Benjamin's GitHub Stats</text>
+
+  <!-- Dividers -->
+  <line x1="25"  y1="54" x2="470" y2="54"  stroke="#1d3a52" stroke-width="1"/>
+  <line x1="248" y1="64" x2="248" y2="135" stroke="#1d3a52" stroke-width="1"/>
+  <line x1="25"  y1="135" x2="470" y2="135" stroke="#1d3a52" stroke-width="1"/>
+  <line x1="248" y1="143" x2="248" y2="188" stroke="#1d3a52" stroke-width="1"/>
+
+  
+  <text x="124" y="95" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="12" fill="#7d9db5">Total Stars</text>
+  <text x="124" y="125" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="28" font-weight="700" fill="#4fc3f7">8</text>
+  <text x="372" y="95" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="12" fill="#7d9db5">Total Forks</text>
+  <text x="372" y="125" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="28" font-weight="700" fill="#4fc3f7">0</text>
+  <text x="124" y="153" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="12" fill="#7d9db5">Public Repos</text>
+  <text x="124" y="183" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="28" font-weight="700" fill="#4fc3f7">31</text>
+  <text x="372" y="153" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="12" fill="#7d9db5">Followers</text>
+  <text x="372" y="183" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="28" font-weight="700" fill="#4fc3f7">9</text>
+</svg>

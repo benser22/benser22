@@ -4,6 +4,9 @@ import fs from "fs-extra";
 const USER  = "benser22";
 const TOKEN = process.env.GITHUB_TOKEN;
 
+// ─── Shared card height (keeps both SVGs aligned side by side) ────────────────
+const CARD_H = 234;
+
 // ─── Language color map ────────────────────────────────────────────────────────
 const LANG_COLORS = {
   TypeScript:  "#3178C6",
@@ -36,10 +39,10 @@ const rest = axios.create({
   headers: { Authorization: `token ${TOKEN}` },
 });
 
-async function graphql(query, variables = {}) {
+async function graphql(query) {
   const { data } = await axios.post(
     "https://api.github.com/graphql",
-    { query, variables },
+    { query },
     { headers: { Authorization: `bearer ${TOKEN}` } }
   );
   if (data.errors) throw new Error(data.errors[0].message);
@@ -48,7 +51,6 @@ async function graphql(query, variables = {}) {
 
 // ─── Data fetching ────────────────────────────────────────────────────────────
 async function getContributionsByYear(years) {
-  // Build a query with one contributionsCollection fragment per year
   const fragments = years.map((year) => {
     const from = `${year}-01-01T00:00:00Z`;
     const to   = `${year}-12-31T23:59:59Z`;
@@ -69,10 +71,7 @@ async function getContributionsByYear(years) {
 
 async function getStats() {
   const { data: user } = await rest.get(`/users/${USER}`);
-
-  const { data: repos } = await rest.get(
-    `/users/${USER}/repos?per_page=100&type=owner`
-  );
+  const { data: repos } = await rest.get(`/users/${USER}/repos?per_page=100&type=owner`);
 
   const langs = {};
   await Promise.allSettled(
@@ -86,18 +85,17 @@ async function getStats() {
       })
   );
 
-  // Years from account creation up to current year
-  const startYear  = new Date(user.created_at).getFullYear();
+  const startYear   = new Date(user.created_at).getFullYear();
   const currentYear = new Date().getFullYear();
-  const years      = Array.from(
+  const years       = Array.from(
     { length: currentYear - startYear + 1 },
     (_, i) => startYear + i
   );
 
-  const contributions = await getContributionsByYear(years);
+  const contributions      = await getContributionsByYear(years);
   const totalContributions = contributions.reduce((a, b) => a + b.count, 0);
 
-  // Keep only the last 4 years for the chart (total always reflects full history)
+  // Always show last 4 years in the chart — total reflects full history
   const recentContributions = contributions.slice(-4);
 
   return { contributions: recentContributions, totalContributions, langs };
@@ -108,26 +106,22 @@ const fmt = (n) => n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);
 
 // ─── Contributions SVG ────────────────────────────────────────────────────────
 function createStatsSVG({ contributions, totalContributions }) {
-  const W        = 495;
-  const PAD      = 25;
-  const BAR_AREA = W - PAD * 2;
-
-  // Filter years with contributions and sort ascending
-  const years = contributions.filter((y) => y.count > 0);
-  const max   = Math.max(...years.map((y) => y.count));
-
-  const BAR_MAX_H  = 55;
+  const W          = 495;
+  const PAD        = 25;
+  const BAR_AREA   = W - PAD * 2;
+  const BARS_START = 100;               // y top-limit for bars
+  const BAR_MAX_H  = CARD_H - BARS_START - 36; // fills remaining space → 98px
+  const years      = contributions.filter((y) => y.count > 0);
+  const max        = Math.max(...years.map((y) => y.count));
   const BAR_W      = Math.min(50, Math.floor((BAR_AREA - (years.length - 1) * 10) / years.length));
   const BAR_GAP    = Math.floor((BAR_AREA - BAR_W * years.length) / Math.max(years.length - 1, 1));
-  const BARS_START = 90; // y where bars top can reach
 
   const bars = years.map(({ year, count }, i) => {
-    const barH  = Math.max(4, Math.round((count / max) * BAR_MAX_H));
-    const x     = PAD + i * (BAR_W + BAR_GAP);
-    const barY  = BARS_START + BAR_MAX_H - barH;
+    const barH   = Math.max(4, Math.round((count / max) * BAR_MAX_H));
+    const x      = PAD + i * (BAR_W + BAR_GAP);
+    const barY   = BARS_START + BAR_MAX_H - barH;
     const labelY = barY - 6;
     const yearY  = BARS_START + BAR_MAX_H + 16;
-
     return `
   <rect x="${x}" y="${barY}" width="${BAR_W}" height="${barH}" rx="4" fill="#4fc3f7" opacity="0.85"/>
   <text x="${x + BAR_W / 2}" y="${labelY}" text-anchor="middle"
@@ -138,23 +132,14 @@ function createStatsSVG({ contributions, totalContributions }) {
         font-size="11" fill="#7d9db5">${year}</text>`;
   }).join("");
 
-  const H = BARS_START + BAR_MAX_H + 36;
-
-  return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
-  <rect width="${W}" height="${H}" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
-
-  <!-- Title -->
+  return `<svg width="${W}" height="${CARD_H}" xmlns="http://www.w3.org/2000/svg">
+  <rect width="${W}" height="${CARD_H}" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
   <text x="${PAD}" y="28" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="13" font-weight="700" fill="#cdd9e5">Total Contributions</text>
-
-  <!-- Big number -->
-  <text x="${W / 2}" y="72" text-anchor="middle"
+  <text x="${W / 2}" y="78" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="36" font-weight="700" fill="#4fc3f7">${totalContributions.toLocaleString("en-US")}</text>
-
-  <!-- Divider -->
-  <line x1="${PAD}" y1="84" x2="${W - PAD}" y2="84" stroke="#1d3a52" stroke-width="1"/>
-
+        font-size="38" font-weight="700" fill="#4fc3f7">${totalContributions.toLocaleString("en-US")}</text>
+  <line x1="${PAD}" y1="90" x2="${W - PAD}" y2="90" stroke="#1d3a52" stroke-width="1"/>
   ${bars}
 </svg>`;
 }
@@ -173,9 +158,9 @@ function createLanguagesSVG(langs) {
     .slice(0, TOP);
 
   if (sorted.length === 0) {
-    return `<svg width="${W}" height="80" xmlns="http://www.w3.org/2000/svg">
-  <rect width="${W}" height="80" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
-  <text x="${W / 2}" y="45" text-anchor="middle" fill="#7d9db5"
+    return `<svg width="${W}" height="${CARD_H}" xmlns="http://www.w3.org/2000/svg">
+  <rect width="${W}" height="${CARD_H}" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
+  <text x="${W / 2}" y="${CARD_H / 2}" text-anchor="middle" fill="#7d9db5"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif" font-size="13">No language data yet</text>
 </svg>`;
   }
@@ -203,8 +188,10 @@ function createLanguagesSVG(langs) {
     ${segments}
   </g>`;
 
-  const LIST_START_Y = 90;
-  const LINE_H       = 22;
+  // Distribute rows evenly within the card
+  const LIST_AREA    = CARD_H - 90 - 12; // space below the progress bar
+  const LINE_H       = Math.floor(LIST_AREA / entries.length);
+  const LIST_START_Y = 90 + Math.floor(LINE_H * 0.75);
 
   const rows = entries.map(({ lang, pct, color }, i) => {
     const y = LIST_START_Y + i * LINE_H;
@@ -217,14 +204,10 @@ function createLanguagesSVG(langs) {
         font-size="12" fill="#7d9db5">${pct.toFixed(1)}%</text>`;
   }).join("");
 
-  const H = LIST_START_Y + entries.length * LINE_H + 12;
-
-  return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
-  <rect width="${W}" height="${H}" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
-
+  return `<svg width="${W}" height="${CARD_H}" xmlns="http://www.w3.org/2000/svg">
+  <rect width="${W}" height="${CARD_H}" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
   <text x="${PAD}" y="36" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="15" font-weight="700" fill="#cdd9e5">Most Used Languages</text>
-
   ${barClipped}
   ${rows}
 </svg>`;

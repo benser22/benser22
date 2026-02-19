@@ -12,12 +12,12 @@
 
 <p align="center">
   Fullstack Developer con foco en arquitectura limpia y código mantenible.<br/>
-  Next.js · Tailwind · TypeScript en front y back<br/>
+  React · Next.js · Tailwind · TypeScript · Node.js<br/>
 </p>
 
 <p align="center">
   📍 Tucumán, Argentina &nbsp;·&nbsp;
-  🌐 <a href="https://portfolio.22studios.xyz"><b>portfolio.22studios.xyz</b></a>
+  🌐 <a target="_blank" href="https://portfolio.22studios.xyz"><b>portfolio.22studios.xyz</b></a>
 </p>
 
 ---

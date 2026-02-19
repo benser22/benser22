@@ -11,9 +11,8 @@
 <h2 align="center">🧑‍💻 About Me</h2>
 
 <p align="center">
-  Desarrollador Fullstack. Me especializo en TypeScript,<br/>
-  React, Next.js y Node.js — construyendo aplicaciones modernas, escalables y bien arquitecturadas,<br/>
-  desde el diseño de APIs hasta la interfaz de usuario.
+  Fullstack Developer con foco en arquitectura limpia y código mantenible.<br/>
+  Next.js · Tailwind · TypeScript en front y back<br/>
 </p>
 
 <p align="center">

@@ -11,8 +11,8 @@
 <h2 align="center">🧑‍💻 About Me</h2>
 
 <p align="center">
-  Desarrollador Fullstack basado en Tucumán, Argentina. Me especializo en TypeScript,<br/>
-  React y Node.js — construyendo aplicaciones modernas, escalables y bien arquitecturadas,<br/>
+  Desarrollador Fullstack. Me especializo en TypeScript,<br/>
+  React, Next.js y Node.js — construyendo aplicaciones modernas, escalables y bien arquitecturadas,<br/>
   desde el diseño de APIs hasta la interfaz de usuario.
 </p>
 

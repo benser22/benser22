@@ -44,9 +44,8 @@ async function getStats() {
     `/users/${USER}/repos?per_page=100&type=owner`
   );
 
-  const stars   = repos.reduce((acc, r) => acc + r.stargazers_count, 0);
-  const forks   = repos.reduce((acc, r) => acc + r.forks_count, 0);
-  const langs   = {};
+  const stars = repos.reduce((acc, r) => acc + r.stargazers_count, 0);
+  const langs = {};
 
   // Fetch languages in parallel, skip forks
   await Promise.allSettled(
@@ -60,11 +59,13 @@ async function getStats() {
       })
   );
 
+  const memberSince = new Date(user.created_at).getFullYear();
+
   return {
-    repos:     user.public_repos,
-    followers: user.followers,
+    repos:       user.public_repos,
+    followers:   user.followers,
     stars,
-    forks,
+    memberSince,
     langs,
   };
 }
@@ -73,15 +74,15 @@ async function getStats() {
 const fmt = (n) => n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);
 
 // ─── Stats SVG ────────────────────────────────────────────────────────────────
-function createStatsSVG({ repos, followers, stars, forks }) {
+function createStatsSVG({ repos, followers, stars, memberSince }) {
   const W = 495;
   const H = 195;
 
   const items = [
-    { label: "Total Stars",  value: fmt(stars),     x: 124, labelY: 95,  valueY: 125 },
-    { label: "Total Forks",  value: fmt(forks),     x: 372, labelY: 95,  valueY: 125 },
-    { label: "Public Repos", value: fmt(repos),     x: 124, labelY: 153, valueY: 183 },
-    { label: "Followers",    value: fmt(followers), x: 372, labelY: 153, valueY: 183 },
+    { label: "Stars Earned",  value: fmt(stars),          x: 124, labelY: 95,  valueY: 125 },
+    { label: "Followers",     value: fmt(followers),      x: 372, labelY: 95,  valueY: 125 },
+    { label: "Public Repos",  value: fmt(repos),          x: 124, labelY: 153, valueY: 183 },
+    { label: "Member Since",  value: String(memberSince), x: 372, labelY: 153, valueY: 183 },
   ];
 
   const cells = items.map(({ label, value, x, labelY, valueY }) => `
@@ -112,13 +113,12 @@ function createStatsSVG({ repos, followers, stars, forks }) {
 
 // ─── Languages SVG ────────────────────────────────────────────────────────────
 function createLanguagesSVG(langs) {
-  const TOP    = 6;
-  const W      = 300;
-  const PAD    = 20;
-  const BAR_X  = PAD;
-  const BAR_Y  = 58;
-  const BAR_H  = 9;
-  const BAR_W  = W - PAD * 2;
+  const TOP   = 6;
+  const W     = 300;
+  const PAD   = 20;
+  const BAR_Y = 58;
+  const BAR_H = 9;
+  const BAR_W = W - PAD * 2;
 
   const sorted = Object.entries(langs)
     .sort(([, a], [, b]) => b - a)
@@ -140,10 +140,9 @@ function createLanguagesSVG(langs) {
   }));
 
   // Progress bar segments
-  let cx = BAR_X;
-  const segments = entries.map(({ pct, color }, i) => {
-    const w  = (pct / 100) * BAR_W;
-    const rx = i === 0 ? 4 : i === entries.length - 1 ? 4 : 0;
+  let cx = PAD;
+  const segments = entries.map(({ pct, color }) => {
+    const w   = (pct / 100) * BAR_W;
     const seg = `<rect x="${cx.toFixed(2)}" y="${BAR_Y}" width="${w.toFixed(2)}" height="${BAR_H}" fill="${color}"/>`;
     cx += w;
     return seg;
@@ -151,13 +150,12 @@ function createLanguagesSVG(langs) {
 
   const barClipped = `
   <clipPath id="bc">
-    <rect x="${BAR_X}" y="${BAR_Y}" width="${BAR_W}" height="${BAR_H}" rx="4"/>
+    <rect x="${PAD}" y="${BAR_Y}" width="${BAR_W}" height="${BAR_H}" rx="4"/>
   </clipPath>
   <g clip-path="url(#bc)">
     ${segments}
   </g>`;
 
-  // Language list rows
   const LIST_START_Y = 90;
   const LINE_H       = 22;
 
@@ -197,11 +195,11 @@ function createLanguagesSVG(langs) {
     await fs.writeFile("assets/languages.svg", createLanguagesSVG(stats.langs));
 
     console.log(`✅ SVGs generated successfully
-    · Stars:     ${stats.stars}
-    · Forks:     ${stats.forks}
-    · Repos:     ${stats.repos}
-    · Followers: ${stats.followers}
-    · Languages: ${Object.keys(stats.langs).length}`);
+    · Stars:        ${stats.stars}
+    · Followers:    ${stats.followers}
+    · Repos:        ${stats.repos}
+    · Member since: ${stats.memberSince}
+    · Languages:    ${Object.keys(stats.langs).length}`);
   } catch (err) {
     console.error("❌ Error generating stats:", err.message);
     process.exit(1);

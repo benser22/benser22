@@ -1,0 +1,13 @@
+{
+  "name": "benser22",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate-stats.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "fs-extra": "^11.2.0"
+  }
+}

@@ -1,19 +1,24 @@
 <h1 align="center">Hi, I'm Benjamin! 👋</h1>
 
 <p align="center">
-  💻 Fullstack Developer | 🚀 Passionate about building modern web apps
+  <a href="https://readme-typing-svg.demolab.com">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3500&pause=1000&color=4FC3F7&center=true&vCenter=true&width=600&lines=Fullstack+Developer;React+%7C+Node.js+%7C+TypeScript;Building+modern+%26+scalable+web+apps" alt="Typing SVG"/>
+  </a>
 </p>
 
 ---
 
-<h2 align="center">📊 GitHub Stats</h2>
+<h2 align="center">🧑‍💻 About Me</h2>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es" alt="GitHub Streak" height="180"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&theme=cobalt" height="180"/>
+  Desarrollador Fullstack basado en Tucumán, Argentina. Me especializo en TypeScript,<br/>
+  React y Node.js — construyendo aplicaciones modernas, escalables y bien arquitecturadas,<br/>
+  desde el diseño de APIs hasta la interfaz de usuario.
 </p>
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=cobalt&locale=es" alt="GitHub Stats" height="180"/>
+  📍 Tucumán, Argentina &nbsp;·&nbsp;
+  🌐 <a href="https://portfolio.22studios.xyz"><b>portfolio.22studios.xyz</b></a>
 </p>
 
 ---
@@ -49,23 +54,37 @@
   <!-- DevOps -->
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/>
-  <p align="center">
-</p>
-
-</p>
-
-<p align="center">
-  <img src="https://i.pinimg.com/originals/7d/06/89/7d068990a6d0fa0b99d8ca96afde86dc.gif" width="260" alt="Animated Code GIF"/>
 </p>
 
 ---
 
-<h2 align="center">🌐 Portfolio</h2>
+<h2 align="center">📊 GitHub Stats</h2>
+
+<!-- ═══════════════════════════════════════════════════════
+     PRIMARY: SVGs propios, auto-actualizados cada 24h
+     vía GitHub Actions (see .github/workflows/stats.yml)
+     ═══════════════════════════════════════════════════════ -->
+<p align="center">
+  <img src="./assets/stats.svg"     alt="GitHub Stats"        height="195"/>
+  &nbsp;
+  <img src="./assets/languages.svg" alt="Most Used Languages" height="195"/>
+</p>
 
 <p align="center">
-  🚀 Check out my projects and work at:  
-  <a href="https://portfolio.22studios.xyz" target="_blank"><b>portfolio.22studios.xyz</b></a>
+  <img src="https://streak-stats.demolab.com?user=benser22&theme=cobalt&locale=es" alt="GitHub Streak" height="180"/>
 </p>
+
+<!--
+  ═══════════════════════════════════════════════════════
+  FALLBACK: Stats externas — descomentar si los SVGs
+  propios fallan o el workflow no ha corrido todavía.
+  ═══════════════════════════════════════════════════════
+
+  <p align="center">
+    <img src="https://github-readme-stats.vercel.app/api?username=benser22&show_icons=true&theme=cobalt&locale=es" alt="GitHub Stats" height="180"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=benser22&theme=cobalt&layout=compact" alt="Top Languages" height="180"/>
+  </p>
+-->
 
 ---
 
@@ -75,14 +94,16 @@
   <a href="https://www.linkedin.com/in/bsf22/" target="_blank">
     <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497466/icons/yqlmrg6djdsadiogusje.png" width="40" alt="LinkedIn"/>
   </a>
+  &nbsp;
   <a href="mailto:benser22@gmail.com" target="_blank">
     <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497465/icons/gzy2gk3cklfr0ysobc7l.png" width="40" alt="Email"/>
   </a>
+  &nbsp;
   <a href="https://wa.me/+5493815988025" target="_blank">
     <img src="https://res.cloudinary.com/djzp2k8gd/image/upload/v1714497466/icons/vknu3drylpd66rcrzjs5.png" width="40" alt="WhatsApp"/>
   </a>
 </p>
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=benser22&&style=flat-square" alt="Profile views"/>
-</div>  
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=benser22&style=flat-square&color=4fc3f7" alt="Profile views"/>
+</p>

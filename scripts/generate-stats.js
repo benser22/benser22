@@ -139,7 +139,6 @@ function createStatsSVG({ contributions, totalContributions }) {
   <text x="${W / 2}" y="78" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="38" font-weight="700" fill="#4fc3f7">${totalContributions.toLocaleString("en-US")}</text>
-  <line x1="${PAD}" y1="90" x2="${W - PAD}" y2="90" stroke="#1d3a52" stroke-width="1"/>
   ${bars}
 </svg>`;
 }

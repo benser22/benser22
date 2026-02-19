@@ -97,7 +97,10 @@ async function getStats() {
   const contributions = await getContributionsByYear(years);
   const totalContributions = contributions.reduce((a, b) => a + b.count, 0);
 
-  return { contributions, totalContributions, langs };
+  // Keep only the last 4 years for the chart (total always reflects full history)
+  const recentContributions = contributions.slice(-4);
+
+  return { contributions: recentContributions, totalContributions, langs };
 }
 
 // ─── SVG helpers ─────────────────────────────────────────────────────────────

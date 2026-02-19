@@ -1,7 +1,7 @@
 import axios from "axios";
 import fs from "fs-extra";
 
-const USER = "benser22";
+const USER  = "benser22";
 const TOKEN = process.env.GITHUB_TOKEN;
 
 // ─── Language color map ────────────────────────────────────────────────────────
@@ -30,84 +30,129 @@ const LANG_COLORS = {
 
 const DEFAULT_COLOR = "#858585";
 
-// ─── API client ───────────────────────────────────────────────────────────────
-const api = axios.create({
+// ─── API clients ──────────────────────────────────────────────────────────────
+const rest = axios.create({
   baseURL: "https://api.github.com",
   headers: { Authorization: `token ${TOKEN}` },
 });
 
-// ─── Data fetching ────────────────────────────────────────────────────────────
-async function getStats() {
-  const { data: user } = await api.get(`/users/${USER}`);
+async function graphql(query, variables = {}) {
+  const { data } = await axios.post(
+    "https://api.github.com/graphql",
+    { query, variables },
+    { headers: { Authorization: `bearer ${TOKEN}` } }
+  );
+  if (data.errors) throw new Error(data.errors[0].message);
+  return data.data;
+}
 
-  const { data: repos } = await api.get(
+// ─── Data fetching ────────────────────────────────────────────────────────────
+async function getContributionsByYear(years) {
+  // Build a query with one contributionsCollection fragment per year
+  const fragments = years.map((year) => {
+    const from = `${year}-01-01T00:00:00Z`;
+    const to   = `${year}-12-31T23:59:59Z`;
+    return `
+      y${year}: contributionsCollection(from: "${from}", to: "${to}") {
+        contributionCalendar { totalContributions }
+      }`;
+  }).join("\n");
+
+  const query = `{ user(login: "${USER}") { ${fragments} } }`;
+  const data  = await graphql(query);
+
+  return years.map((year) => ({
+    year,
+    count: data.user[`y${year}`].contributionCalendar.totalContributions,
+  }));
+}
+
+async function getStats() {
+  const { data: user } = await rest.get(`/users/${USER}`);
+
+  const { data: repos } = await rest.get(
     `/users/${USER}/repos?per_page=100&type=owner`
   );
 
-  const stars = repos.reduce((acc, r) => acc + r.stargazers_count, 0);
   const langs = {};
-
-  // Fetch languages in parallel, skip forks
   await Promise.allSettled(
     repos
       .filter((r) => !r.fork)
       .map(async (repo) => {
-        const { data } = await api.get(repo.languages_url);
+        const { data } = await rest.get(repo.languages_url);
         for (const [lang, bytes] of Object.entries(data)) {
           langs[lang] = (langs[lang] || 0) + bytes;
         }
       })
   );
 
-  const memberSince = new Date(user.created_at).getFullYear();
+  // Years from account creation up to current year
+  const startYear  = new Date(user.created_at).getFullYear();
+  const currentYear = new Date().getFullYear();
+  const years      = Array.from(
+    { length: currentYear - startYear + 1 },
+    (_, i) => startYear + i
+  );
 
-  return {
-    repos:       user.public_repos,
-    followers:   user.followers,
-    stars,
-    memberSince,
-    langs,
-  };
+  const contributions = await getContributionsByYear(years);
+  const totalContributions = contributions.reduce((a, b) => a + b.count, 0);
+
+  return { contributions, totalContributions, langs };
 }
 
 // ─── SVG helpers ─────────────────────────────────────────────────────────────
 const fmt = (n) => n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);
 
-// ─── Stats SVG ────────────────────────────────────────────────────────────────
-function createStatsSVG({ repos, followers, stars, memberSince }) {
-  const W = 495;
-  const H = 195;
+// ─── Contributions SVG ────────────────────────────────────────────────────────
+function createStatsSVG({ contributions, totalContributions }) {
+  const W        = 495;
+  const PAD      = 25;
+  const BAR_AREA = W - PAD * 2;
 
-  const items = [
-    { label: "Stars Earned",  value: fmt(stars),          x: 124, labelY: 95,  valueY: 125 },
-    { label: "Followers",     value: fmt(followers),      x: 372, labelY: 95,  valueY: 125 },
-    { label: "Public Repos",  value: fmt(repos),          x: 124, labelY: 153, valueY: 183 },
-    { label: "Member Since",  value: String(memberSince), x: 372, labelY: 153, valueY: 183 },
-  ];
+  // Filter years with contributions and sort ascending
+  const years = contributions.filter((y) => y.count > 0);
+  const max   = Math.max(...years.map((y) => y.count));
 
-  const cells = items.map(({ label, value, x, labelY, valueY }) => `
-  <text x="${x}" y="${labelY}" text-anchor="middle"
+  const BAR_MAX_H  = 55;
+  const BAR_W      = Math.min(50, Math.floor((BAR_AREA - (years.length - 1) * 10) / years.length));
+  const BAR_GAP    = Math.floor((BAR_AREA - BAR_W * years.length) / Math.max(years.length - 1, 1));
+  const BARS_START = 90; // y where bars top can reach
+
+  const bars = years.map(({ year, count }, i) => {
+    const barH  = Math.max(4, Math.round((count / max) * BAR_MAX_H));
+    const x     = PAD + i * (BAR_W + BAR_GAP);
+    const barY  = BARS_START + BAR_MAX_H - barH;
+    const labelY = barY - 6;
+    const yearY  = BARS_START + BAR_MAX_H + 16;
+
+    return `
+  <rect x="${x}" y="${barY}" width="${BAR_W}" height="${barH}" rx="4" fill="#4fc3f7" opacity="0.85"/>
+  <text x="${x + BAR_W / 2}" y="${labelY}" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#7d9db5">${label}</text>
-  <text x="${x}" y="${valueY}" text-anchor="middle"
+        font-size="11" fill="#4fc3f7">${fmt(count)}</text>
+  <text x="${x + BAR_W / 2}" y="${yearY}" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="28" font-weight="700" fill="#4fc3f7">${value}</text>`
-  ).join("");
+        font-size="11" fill="#7d9db5">${year}</text>`;
+  }).join("");
+
+  const H = BARS_START + BAR_MAX_H + 36;
 
   return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${W}" height="${H}" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
 
   <!-- Title -->
-  <text x="25" y="40" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="15" font-weight="700" fill="#cdd9e5">Benjamin's GitHub Stats</text>
+  <text x="${PAD}" y="28" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="13" font-weight="700" fill="#cdd9e5">Total Contributions</text>
 
-  <!-- Dividers -->
-  <line x1="25"  y1="54" x2="470" y2="54"  stroke="#1d3a52" stroke-width="1"/>
-  <line x1="248" y1="64" x2="248" y2="135" stroke="#1d3a52" stroke-width="1"/>
-  <line x1="25"  y1="135" x2="470" y2="135" stroke="#1d3a52" stroke-width="1"/>
-  <line x1="248" y1="143" x2="248" y2="188" stroke="#1d3a52" stroke-width="1"/>
+  <!-- Big number -->
+  <text x="${W / 2}" y="72" text-anchor="middle"
+        font-family="'Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="36" font-weight="700" fill="#4fc3f7">${totalContributions.toLocaleString("en-US")}</text>
 
-  ${cells}
+  <!-- Divider -->
+  <line x1="${PAD}" y1="84" x2="${W - PAD}" y2="84" stroke="#1d3a52" stroke-width="1"/>
+
+  ${bars}
 </svg>`;
 }
 
@@ -139,7 +184,6 @@ function createLanguagesSVG(langs) {
     color: LANG_COLORS[lang] ?? DEFAULT_COLOR,
   }));
 
-  // Progress bar segments
   let cx = PAD;
   const segments = entries.map(({ pct, color }) => {
     const w   = (pct / 100) * BAR_W;
@@ -175,7 +219,6 @@ function createLanguagesSVG(langs) {
   return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${W}" height="${H}" rx="12" fill="#193549" stroke="#1d3a52" stroke-width="1.5"/>
 
-  <!-- Title -->
   <text x="${PAD}" y="36" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="15" font-weight="700" fill="#cdd9e5">Most Used Languages</text>
 
@@ -195,11 +238,9 @@ function createLanguagesSVG(langs) {
     await fs.writeFile("assets/languages.svg", createLanguagesSVG(stats.langs));
 
     console.log(`✅ SVGs generated successfully
-    · Stars:        ${stats.stars}
-    · Followers:    ${stats.followers}
-    · Repos:        ${stats.repos}
-    · Member since: ${stats.memberSince}
-    · Languages:    ${Object.keys(stats.langs).length}`);
+    · Total contributions: ${stats.totalContributions}
+    · By year: ${stats.contributions.map((y) => `${y.year}: ${y.count}`).join(", ")}
+    · Languages: ${Object.keys(stats.langs).length}`);
   } catch (err) {
     console.error("❌ Error generating stats:", err.message);
     process.exit(1);

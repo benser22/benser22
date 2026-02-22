@@ -4,7 +4,7 @@
         font-size="13" font-weight="700" fill="#cdd9e5">Total Contributions</text>
   <text x="247.5" y="78" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="38" font-weight="700" fill="#4fc3f7">5,682</text>
+        font-size="38" font-weight="700" fill="#4fc3f7">5,692</text>
   
   <rect x="25" y="174" width="50" height="24" rx="4" fill="#4fc3f7" opacity="0.85"/>
   <text x="50" y="168" text-anchor="middle"
@@ -27,10 +27,10 @@
   <text x="312" y="214" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="11" fill="#7d9db5">2025</text>
-  <rect x="418" y="194" width="50" height="4" rx="4" fill="#4fc3f7" opacity="0.85"/>
-  <text x="443" y="188" text-anchor="middle"
+  <rect x="418" y="193" width="50" height="5" rx="4" fill="#4fc3f7" opacity="0.85"/>
+  <text x="443" y="187" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="11" fill="#4fc3f7">133</text>
+        font-size="11" fill="#4fc3f7">143</text>
   <text x="443" y="214" text-anchor="middle"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="11" fill="#7d9db5">2026</text>

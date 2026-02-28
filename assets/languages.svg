@@ -7,48 +7,48 @@
     <rect x="20" y="58" width="260" height="9" rx="4"/>
   </clipPath>
   <g clip-path="url(#bc)">
-    <rect x="20.00" y="58" width="166.05" height="9" fill="#F1E05A"/>
-  <rect x="186.05" y="58" width="44.46" height="9" fill="#3178C6"/>
-  <rect x="230.51" y="58" width="36.61" height="9" fill="#563D7C"/>
-  <rect x="267.12" y="58" width="10.98" height="9" fill="#E34F26"/>
-  <rect x="278.09" y="58" width="1.73" height="9" fill="#858585"/>
-  <rect x="279.83" y="58" width="0.17" height="9" fill="#384D54"/>
+    <rect x="20.00" y="58" width="115.70" height="9" fill="#3178C6"/>
+  <rect x="135.70" y="58" width="110.06" height="9" fill="#F1E05A"/>
+  <rect x="245.76" y="58" width="25.30" height="9" fill="#563D7C"/>
+  <rect x="271.06" y="58" width="7.27" height="9" fill="#E34F26"/>
+  <rect x="278.32" y="58" width="1.15" height="9" fill="#858585"/>
+  <rect x="279.47" y="58" width="0.53" height="9" fill="#384D54"/>
   </g>
   
-  <circle cx="25" cy="101" r="5" fill="#F1E05A"/>
+  <circle cx="25" cy="101" r="5" fill="#3178C6"/>
   <text x="36" y="106" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#cdd9e5">JavaScript</text>
+        font-size="12" fill="#cdd9e5">TypeScript</text>
   <text x="280" y="106" text-anchor="end"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#7d9db5">63.9%</text>
-  <circle cx="25" cy="123" r="5" fill="#3178C6"/>
+        font-size="12" fill="#7d9db5">44.5%</text>
+  <circle cx="25" cy="123" r="5" fill="#F1E05A"/>
   <text x="36" y="128" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#cdd9e5">TypeScript</text>
+        font-size="12" fill="#cdd9e5">JavaScript</text>
   <text x="280" y="128" text-anchor="end"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#7d9db5">17.1%</text>
+        font-size="12" fill="#7d9db5">42.3%</text>
   <circle cx="25" cy="145" r="5" fill="#563D7C"/>
   <text x="36" y="150" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="12" fill="#cdd9e5">CSS</text>
   <text x="280" y="150" text-anchor="end"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#7d9db5">14.1%</text>
+        font-size="12" fill="#7d9db5">9.7%</text>
   <circle cx="25" cy="167" r="5" fill="#E34F26"/>
   <text x="36" y="172" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="12" fill="#cdd9e5">HTML</text>
   <text x="280" y="172" text-anchor="end"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#7d9db5">4.2%</text>
+        font-size="12" fill="#7d9db5">2.8%</text>
   <circle cx="25" cy="189" r="5" fill="#858585"/>
   <text x="36" y="194" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="12" fill="#cdd9e5">Astro</text>
   <text x="280" y="194" text-anchor="end"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#7d9db5">0.7%</text>
+        font-size="12" fill="#7d9db5">0.4%</text>
   <circle cx="25" cy="211" r="5" fill="#384D54"/>
   <text x="36" y="216" font-family="'Segoe UI',Helvetica,Arial,sans-serif"
         font-size="12" fill="#cdd9e5">Dockerfile</text>
   <text x="280" y="216" text-anchor="end"
         font-family="'Segoe UI',Helvetica,Arial,sans-serif"
-        font-size="12" fill="#7d9db5">0.1%</text>
+        font-size="12" fill="#7d9db5">0.2%</text>
 </svg>
